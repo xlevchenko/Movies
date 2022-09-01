@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MoviesModel: Codable {
-    let name: String
-    let year: Int
+struct MoviesModel: Codable, Equatable {
+    var name: String
+    var year: Int
 }
