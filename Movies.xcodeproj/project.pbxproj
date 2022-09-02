@@ -14,6 +14,7 @@
 		607674A828BFA7CB00C6CE49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607674A728BFA7CB00C6CE49 /* Assets.xcassets */; };
 		607674AB28BFA7CB00C6CE49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607674A928BFA7CB00C6CE49 /* LaunchScreen.storyboard */; };
 		607674B328BFBC3500C6CE49 /* MoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607674B228BFBC3500C6CE49 /* MoviesModel.swift */; };
+		60DA3E5E28C25D8C00702FE8 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 60DA3E5D28C25D8C00702FE8 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60DA3E5E28C25D8C00702FE8 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = Movies;
+			packageProductDependencies = (
+				60DA3E5D28C25D8C00702FE8 /* OrderedCollections */,
+			);
 			productName = Movies;
 			productReference = 6076749B28BFA7C800C6CE49 /* Movies.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 6076749228BFA7C800C6CE49;
+			packageReferences = (
+				60DA3E5C28C25D8C00702FE8 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 6076749C28BFA7C800C6CE49 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60DA3E5C28C25D8C00702FE8 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60DA3E5D28C25D8C00702FE8 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60DA3E5C28C25D8C00702FE8 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6076749328BFA7C800C6CE49 /* Project object */;
 }

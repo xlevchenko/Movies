@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OrderedCollections
 
 class MoviesViewController: UIViewController, UITableViewDelegate {
     
@@ -14,7 +15,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var duplicateLabel: UILabel!
     
-    var moviesArray = [MoviesModel]()
+    var moviesArray: OrderedSet<MoviesModel> = []
     
     
     override func viewDidLoad() {
@@ -33,10 +34,10 @@ class MoviesViewController: UIViewController, UITableViewDelegate {
         if let title = titleMovie.text, let year = yearMovie.text, !title.isEmpty, !year.isEmpty {
             let movie = MoviesModel(name: title, year: Int(year)!)
             
-            if moviesArray.contains(where: { $0.name == movie.name }) {
+            if moviesArray.contains(where: { $0 == movie }) {
                 duplicateLabel.isHidden = false
             } else {
-                self.moviesArray.insert(movie, at: 0)
+                self.moviesArray.insert(movie, at: moviesArray.startIndex)
                 tableView.beginUpdates()
                 tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
                 tableView.endUpdates()
